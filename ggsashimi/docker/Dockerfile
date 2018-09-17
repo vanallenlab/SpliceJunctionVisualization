@@ -47,7 +47,7 @@ RUN pip install pandas
 # Copy ggsashimi in the docker image
 ADD ggsashimi/sashimi-plot.py /
 ADD visualize_junctions.py /
-ADD ggsashimi/palette.txt /
+ADD palette.txt /
 
 RUN apt-get install -y gzip
 

@@ -29,3 +29,21 @@ respectively.
 ## Output <a name="output"></a>
 
 Output is one PDF image for each splice junction, containing sashimi plots for each sample.
+
+## Example <a name="output"></a>
+
+You can test the script using the examples in the "examples" folder in an interactive session of the docker image.
+
+```
+docker build -f ggsashimi/docker/Dockerfile -t vanallenlab/ggsashimi_adapted:0.0 .
+```
+
+From the top level of this repository:
+```
+docker run -it -w $PWD -v $PWD:$PWD vanallenlab/ggsashimi_adapted:0.0
+```
+
+Once in the interactive docker session:
+```
+python visualize_junctions.py -junctions examples/sample_sites.tsv -input_bams_tsv examples/input_bams_two_cols.tsv
+```

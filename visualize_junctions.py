@@ -19,7 +19,7 @@ def generate_plot(r, input_bams_tsv, chrom_header, start_header, stop_header, an
     label = '{}{}-{}-{}'.format(annotation, chrom, start, stop)
     sys.stdout.write("Looking at {}\n".format(label))
 
-    command = './sashimi-plot.py -b {} -c {}:{}-{} ' \
+    command = 'python ggsashimi/sashimi-plot.py -b {} -c {}:{}-{} ' \
               ' -M 5 --shrink --alpha 0.6 --base-size=6 ' \
               '--ann-height=2 --height=3 --width=4 -P palette.txt -o {}'.format(input_bams_tsv,
                                                                                 chrom, int(start)-10, int(stop)+10,
