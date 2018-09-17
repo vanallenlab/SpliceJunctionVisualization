@@ -11,7 +11,7 @@ the following command, which adds ggsashimi, R, samtools, Python, and the visual
 the docker image:
 
 ```
-docker build -f ggsashimi/docker/Dockerfile -t vanallenlab/ggsashimi_adapted:0.0 .
+docker build -f ggsashimi/docker/Dockerfile -t local_docker/ggsashimi_adapted:0.0 .
 ```
 
 
@@ -37,7 +37,7 @@ You can test the script using the examples in the "examples" folder in an intera
 
 From the top level of this repository:
 ```
-docker run -it -w $PWD -v $PWD:$PWD vanallenlab/ggsashimi_adapted:0.0
+docker run -it -w $PWD -v $PWD:$PWD local_docker/ggsashimi_adapted:0.0
 ```
 
 Once in the interactive docker session:
