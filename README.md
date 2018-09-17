@@ -1,5 +1,7 @@
 # SpliceJunctionVisualizer
 
+ekofman/splice_junction_visualization
+
 FireCloud-ready script for high-throughput visualization of sashimi splots for a list of splice junction coordinates.
 This implementation uses the ggsashimi visualization library created by Emilio Palumbo <emilio.palumbo@crg.eu>.
 
@@ -10,7 +12,7 @@ the following command, which adds ggsashimi, R, samtools, Python, and the visual
 the docker image:
 
 ```
-docker build -f ggsashimi/docker/Dockerfile -t vanallenlab/ggsashimi_adapted:1.0 .
+docker build -f ggsashimi/docker/Dockerfile -t vanallenlab/ggsashimi_adapted:0.0 .
 ```
 
 
@@ -33,10 +35,6 @@ Output is one PDF image for each splice junction, containing sashimi plots for e
 ## Example <a name="output"></a>
 
 You can test the script using the examples in the "examples" folder in an interactive session of the docker image.
-
-```
-docker build -f ggsashimi/docker/Dockerfile -t vanallenlab/ggsashimi_adapted:0.0 .
-```
 
 From the top level of this repository:
 ```
