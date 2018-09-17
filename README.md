@@ -1,9 +1,8 @@
 # SpliceJunctionVisualizer
 
-ekofman/splice_junction_visualization
-
-FireCloud-ready script for high-throughput visualization of sashimi splots for a list of splice junction coordinates.
-This implementation uses the ggsashimi visualization library created by Emilio Palumbo <emilio.palumbo@crg.eu>.
+FireCloud-ready script (method at ekofman/splice_junction_visualization) for high-throughput visualization of sashimi
+splots for a list of splice junction coordinates. This implementation uses the ggsashimi visualization library created
+by Emilio Palumbo <emilio.palumbo@crg.eu>.
 
 ## Docker Image <a name="docker_build"></a>
 
