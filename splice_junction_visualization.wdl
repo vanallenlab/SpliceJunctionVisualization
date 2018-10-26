@@ -9,6 +9,7 @@ workflow splicejunctionvisualization {
     String chromHeader="Chrom"
     String startHeader="Start"
     String stopHeader="End"
+    Int maxChartsPerPage=5
 
     call RunSpliceJunctionVisualizationTask {
     	input:
@@ -21,7 +22,8 @@ workflow splicejunctionvisualization {
             annotationsHeader_or_None=annotationsHeader_or_None,
             chromHeader=chromHeader,
             startHeader=startHeader,
-            stopHeader=stopHeader
+            stopHeader=stopHeader,
+            maxChartsPerPage=maxChartsPerPage
     }
 
     output {
@@ -40,6 +42,7 @@ task RunSpliceJunctionVisualizationTask {
     String chromHeader
     String startHeader
     String stopHeader
+    Int maxChartsPerPage
 
     command <<<
     	echo "Current directory and contents:"
@@ -73,7 +76,7 @@ task RunSpliceJunctionVisualizationTask {
         echo "copied palette.txt to here... checking:"
         ls -lh
 
-    	python /visualize_junctions.py -input_bams_tsv input_bams.tsv -junctions ${spliceJunctionsFile} -annotation_header ${annotationsHeader_or_None} -chrom_header ${chromHeader} -start_header ${startHeader} -stop_header ${stopHeader}
+    	python /visualize_junctions.py -input_bams_tsv input_bams.tsv -junctions ${spliceJunctionsFile} -annotation_header ${annotationsHeader_or_None} -chrom_header ${chromHeader} -start_header ${startHeader} -stop_header ${stopHeader} -max_charts ${maxChartsPerPage}
 
         mkdir snapshots
         mv *.pdf snapshots
