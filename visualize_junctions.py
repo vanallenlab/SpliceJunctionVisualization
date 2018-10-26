@@ -36,18 +36,20 @@ def generate_plot(r, input_bams_tsv, chrom_header, start_header, stop_header, an
                         fragment.write(tsv_lines[j])
             new_tsv_paths.append(subfile_name)
 
+    index = 0
     for subfile_path in new_tsv_paths:
         sys.stdout.write('\tGenerating plots for {}\n'.format(subfile_path))
         command = 'python ggsashimi/sashimi-plot.py -b {} -c {}:{}-{} ' \
                   ' -M 5 --shrink --alpha 0.6 --base-size=6 ' \
-                  '--ann-height=2 --height=3 --width=4 -P palette.txt -o {}'.format(subfile_path,
+                  '--ann-height=2 --height=3 --width=4 -P palette.txt -o {}_{}'.format(subfile_path,
                                                                                     chrom, int(start)-10, int(stop)+10,
-                                                                                    label)
+                                                                                    label, index)
 
         try:
             subprocess.call(command.split())
         except:
             sys.stdout.write("Couldn't view region {} because of some error".format(label))
+        index += 1
 
 
 def main(args):
