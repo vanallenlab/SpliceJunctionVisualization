@@ -96,7 +96,7 @@ task RunSpliceJunctionVisualizationTask {
     }
 
     runtime {
-    	docker: "vanallenlab/ggsashimi_adapted:1.0"
+    	docker: "vanallenlab/ggsashimi_adapted:2.0"
         memory: "${memory}"
         disks: "local-disk ${diskSpace} HDD"
         bootDiskSizeGb: 10
