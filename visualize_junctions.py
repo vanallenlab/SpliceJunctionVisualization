@@ -23,7 +23,7 @@ def generate_plot(r, input_bams_tsv, chrom_header, start_header, stop_header, an
     new_tsv_paths = []
     with open(input_bams_tsv, 'r') as f:
         tsv_lines = f.readlines()
-        num_files = int(math.ceil(len(tsv_lines)/max_charts_per_page))
+        num_files = int(math.ceil(len(tsv_lines)/float(max_charts_per_page)))
         sys.stdout.write("Maximum of {} charts per PDF...\n".format(max_charts_per_page))
         sys.stdout.write("Splitting {} lines into {} files\n".format(len(tsv_lines), num_files))
         for i in range(0, num_files):
@@ -39,7 +39,7 @@ def generate_plot(r, input_bams_tsv, chrom_header, start_header, stop_header, an
     index = 0
     for subfile_path in new_tsv_paths:
         sys.stdout.write('\tGenerating plots for {}\n'.format(subfile_path))
-        command = 'python ggsashimi/sashimi-plot.py -b {} -c {}:{}-{} ' \
+        command = 'python /sashimi-plot.py -b {} -c {}:{}-{} ' \
                   ' -M 5 --shrink --alpha 0.6 --base-size=6 ' \
                   '--ann-height=2 --height=3 --width=4 -P palette.txt -o {}_{}'.format(subfile_path,
                                                                                     chrom, int(start)-10, int(stop)+10,

@@ -49,6 +49,9 @@ task RunSpliceJunctionVisualizationTask {
         pwd
         ls -lh
 
+        echo "Contents of /"
+        ls -lh /
+
         mv ${sep = ' ' starAlignedBams} .
         mv ${sep = ' ' bamIndexFiles} .
 
